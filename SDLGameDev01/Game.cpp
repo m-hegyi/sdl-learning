@@ -14,14 +14,20 @@ Game::~Game()
 void Game::render() {
 	SDL_RenderClear(m_pRenderer); // Clear the screen
 
-	TheTextureManager::Instance()->draw("animate", 0, 0, 128, 82, m_pRenderer, SDL_FLIP_NONE);
-	TheTextureManager::Instance()->drawFrame("animate", 100, 100, 128, 82, 1, m_currentFrame, m_pRenderer);
+	//TheTextureManager::Instance()->draw("animate", 0, 0, 128, 82, m_pRenderer, SDL_FLIP_NONE);
+	//TheTextureManager::Instance()->drawFrame("animate", 100, 100, 128, 82, 1, m_currentFrame, m_pRenderer);
+
+	m_go.draw(m_pRenderer);
+	m_player.draw(m_pRenderer);
 
 	SDL_RenderPresent(m_pRenderer); // Draw the screen
 }
 
 void Game::update() {
-	m_currentFrame = int((SDL_GetTicks() / 100)) % 6;
+	m_go.update();
+	m_player.update();
+
+	//m_currentFrame = int((SDL_GetTicks() / 100)) % 6;
 	/*int counter = int(SDL_GetTicks() / 100) % 6;
 	if (counter < 4) {
 		m_sourceRectangle.x = 128 * counter;
@@ -92,32 +98,8 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int heigth, bo
 
 		// init bmp
 		TheTextureManager::Instance()->load("imgs/cat.png", "animate", m_pRenderer);
-		/*SDL_Surface* pTempSurface = IMG_Load("imgs/cat.png");
-
-		m_pTexture = SDL_CreateTextureFromSurface(m_pRenderer, pTempSurface);
-
-		SDL_FreeSurface(pTempSurface);
-
-		if (m_pTexture == NULL) {
-			// error
-			std::cout << "Image is not loaded" << std::endl;
-			return false;
-		}
-		else {
-			std::cout << "Image is loaded" << std::endl;
-
-			// Set reactangle size 
-			SDL_QueryTexture(m_pTexture, NULL, NULL, &m_sourceRectangle.w, &m_sourceRectangle.h);
-
-			m_sourceRectangle.w = 128;
-			m_sourceRectangle.h = 82;
-			m_sourceRectangle.y = 54;
-
-			m_destinationRectangle.x = m_sourceRectangle.x = 0;
-			m_destinationRectangle.y = 0;
-			m_destinationRectangle.w = m_sourceRectangle.w;
-			m_destinationRectangle.h = m_sourceRectangle.h;
-		}*/
+		m_go.load(100, 100, 128, 82, "animate");
+		m_player.load(300, 300, 128, 82, "animate");
 	}
 
 	std::cout << "Init success!" << std::endl;

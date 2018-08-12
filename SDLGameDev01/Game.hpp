@@ -4,6 +4,8 @@
 #include <SDL_image.h>
 
 #include "TextureManager.hpp"
+#include "Player.hpp"
+
 
 typedef TextureManager TheTextureManager;
 
@@ -30,5 +32,8 @@ private:
 	int m_currentFrame;
 
 	bool m_bRunning;
+
+	GameObject m_go;
+	Player m_player;
 };
 
