@@ -72,26 +72,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)Bin\$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)Intermediate\$(Configuration)\$(Platform)\</IntDir>
-    <IncludePath>C:\Users\hegyi\Documents\DevTools\SDL2-2.0.8\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\hegyi\Documents\DevTools\SDL2-2.0.8\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)Vendor\SDL2-2.0.8\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)Vendor\SDL2-2.0.8\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)Bin\$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)Intermediate\$(Configuration)\$(Platform)\</IntDir>
-    <IncludePath>C:\Users\hegyi\Documents\DevTools\SDL2-2.0.8\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\hegyi\Documents\DevTools\SDL2-2.0.8\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)Vendor\SDL2-2.0.8\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)Vendor\SDL2-2.0.8\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)Bin\$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)Intermediate\$(Configuration)\$(Platform)\</IntDir>
-    <IncludePath>C:\Users\hegyi\Documents\DevTools\SDL2-2.0.8\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\hegyi\Documents\DevTools\SDL2-2.0.8\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)Vendor\SDL2-2.0.8\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)Vendor\SDL2-2.0.8\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)Bin\$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)Intermediate\$(Configuration)\$(Platform)\</IntDir>
-    <IncludePath>C:\Users\hegyi\Documents\DevTools\SDL2-2.0.8\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\hegyi\Documents\DevTools\SDL2-2.0.8\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)Vendor\SDL2-2.0.8\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)Vendor\SDL2-2.0.8\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
