@@ -1,5 +1,5 @@
 #include "Game.hpp"
-#include <Windows.h>
+#include <iostream>
 
 // Game object
 Game* g_Game = 0;

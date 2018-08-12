@@ -1,6 +1,11 @@
 #pragma once
 
 #include <SDL.h>
+#include <SDL_image.h>
+
+#include "TextureManager.hpp"
+
+typedef TextureManager TheTextureManager;
 
 class Game
 {
@@ -21,6 +26,8 @@ public:
 private:
 	SDL_Window* m_pWindow;
 	SDL_Renderer* m_pRenderer;
+
+	int m_currentFrame;
 
 	bool m_bRunning;
 };
