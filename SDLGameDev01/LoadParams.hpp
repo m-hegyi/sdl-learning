@@ -6,7 +6,7 @@ class LoadParams
 {
 public:
 	LoadParams(int x, int y, int width, int height, std::string textureID) 
-		: m_x(x), m_y(y), m_width(), m_height(height), m_textureID(textureID) {
+		: m_x(x), m_y(y), m_width(width), m_height(height), m_textureID(textureID) {
 	}
 	~LoadParams();
 
