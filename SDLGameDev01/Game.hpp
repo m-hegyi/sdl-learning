@@ -2,19 +2,28 @@
 
 #include <SDL.h>
 #include <SDL_image.h>
+#include <vector>
 
 #include "TextureManager.hpp"
 #include "Player.hpp"
-
-
-typedef TextureManager TheTextureManager;
+#include "Enemy.hpp"
 
 class Game
 {
 public:
-	Game();
-	~Game();
+	static Game* Instance() {
+		if (s_pInstance == NULL) {
+			s_pInstance = new Game();
+			return s_pInstance;
+		}
+		return s_pInstance;
+	}
 
+private:
+	Game();
+	static Game* s_pInstance;
+public:
+	~Game();
 	// simply set the running variable to true
 	bool init(const char* title, int xpos, int ypos, int width, int heigth, bool fullscreen);
 
@@ -25,6 +34,7 @@ public:
 
 	bool running() { return m_bRunning; }
 
+	SDL_Renderer* getRenderer() const { return m_pRenderer; }
 private:
 	SDL_Window* m_pWindow;
 	SDL_Renderer* m_pRenderer;
@@ -33,7 +43,7 @@ private:
 
 	bool m_bRunning;
 
-	GameObject m_go;
-	Player m_player;
+	std::vector<GameObject*> m_gameObjects;
 };
 
+	typedef Game TheGame;

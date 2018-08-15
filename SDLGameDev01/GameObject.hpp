@@ -5,20 +5,19 @@
 #include <SDL.h>
 
 #include "TextureManager.hpp"
+#include "LoadParams.hpp"
 
 class GameObject
 {
 public:
-	GameObject();
-	~GameObject();
-
-public:
-	void load(int x, int y, int width, int height, std::string textureID);
-	void draw(SDL_Renderer* pRenderer);
-	void update();
-	void clean();
+	virtual void draw() = 0;
+	virtual void update() = 0;
+	virtual void clean() = 0;
 
 protected:
+	GameObject(const LoadParams* pParams) {}
+	~GameObject() {};
+	/*
 	std::string m_textureID;
 
 	int m_currentFrame;
@@ -29,5 +28,6 @@ protected:
 
 	int m_width;
 	int m_height;
+	*/
 };
 

@@ -25,6 +25,8 @@ public:
 		int currentRow, int currentFrame, 
 		SDL_Renderer* pRenderer, SDL_RendererFlip flip = SDL_FLIP_NONE);
 
+	typedef TextureManager TheTextureManager;
+
 private:
 	std::map<std::string, SDL_Texture*> m_textureMap;
 	static TextureManager* s_pInstance;
