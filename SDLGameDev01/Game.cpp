@@ -35,16 +35,7 @@ void Game::update() {
 }
 
 void Game::handleEvents() {
-	SDL_Event event;
-	if (SDL_PollEvent(&event)) {
-		switch (event.type) {
-		case SDL_QUIT:
-			m_bRunning = false;
-			break;
-		default:
-			break;
-		}
-	}
+	TheInputHandler::Instance()->update();
 }
 
 void Game::clean() {
@@ -52,6 +43,7 @@ void Game::clean() {
 	SDL_DestroyWindow(m_pWindow);
 	SDL_DestroyRenderer(m_pRenderer);
 	SDL_Quit();
+	TheInputHandler::Instance()->clean();
 }
 
 bool Game::init(const char* title, int xpos, int ypos, int width, int heigth, bool fullscreen) {
@@ -93,6 +85,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int heigth, bo
 
 		// init bmp
 		TextureManager::Instance()->load("imgs/cat.png", "animate", m_pRenderer);
+		TheInputHandler::Instance()->initializeJoysticks();
 
 		m_gameObjects.push_back(new Player(new LoadParams(100, 100, 128, 82, "animate")));
 		m_gameObjects.push_back(new Enemy(new LoadParams(300, 300, 128, 82, "animate")));
@@ -101,4 +94,8 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int heigth, bo
 	std::cout << "Init success!" << std::endl;
 	m_bRunning = true;
 	return true;
+}
+
+void Game::quit() {
+	m_bRunning = false;
 }

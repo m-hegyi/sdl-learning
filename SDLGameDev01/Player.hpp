@@ -1,6 +1,7 @@
 #pragma once
 
 #include "SDLGameObject.hpp"
+#include "InputHandler.hpp"
 
 class Player : public SDLGameObject 
 {
@@ -17,5 +18,8 @@ public:
 	virtual void draw();
 	virtual void update();
 	virtual void clean();
+
+private:
+	void handleInput();
 };
 

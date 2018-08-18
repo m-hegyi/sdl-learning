@@ -7,6 +7,7 @@
 #include "TextureManager.hpp"
 #include "Player.hpp"
 #include "Enemy.hpp"
+#include "InputHandler.hpp"
 
 class Game
 {
@@ -31,6 +32,7 @@ public:
 	void update();
 	void handleEvents();
 	void clean();
+	void quit();
 
 	bool running() { return m_bRunning; }
 
