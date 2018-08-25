@@ -83,6 +83,12 @@ int InputHandler::yvalue(int joy, int stick) {
 	return 0;
 }
 
+void InputHandler::reset() {
+	m_mouseButtonStates[LEFT] = false;
+	m_mouseButtonStates[MIDDLE] = false;
+	m_mouseButtonStates[RIGHT] = false;
+}
+
 InputHandler::InputHandler() {
 	for (int i = 0; i < 3; i++) {
 		m_mouseButtonStates.push_back(false);
@@ -91,9 +97,12 @@ InputHandler::InputHandler() {
 
 void InputHandler::clean() {
 	if (m_bJoysticksInitialized) {
-		for (unsigned int i = 0; i < m_joysticks.size(); i++) {
-			SDL_JoystickClose(m_joysticks[i]);
+		for (int i = 0; i < m_joysticks.size(); i++) {
+			if (SDL_JoystickGetAttached(m_joysticks[i])) {
+				SDL_JoystickClose(m_joysticks[i]);
+			}
 		}
+
 	}
 }
 

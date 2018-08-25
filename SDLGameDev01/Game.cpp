@@ -20,22 +20,29 @@ void Game::render() {
 	//TheTextureManager::Instance()->drawFrame("animate", 100, 100, 128, 82, 1, m_currentFrame, m_pRenderer);
 
 	// loop trough our objects and draw them
-	for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++) {
-		m_gameObjects[i]->draw();
-	}
+	//for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++) {
+		//m_gameObjects[i]->draw();
+	//}
+
+	m_pGameStateMachine->render();
 
 	SDL_RenderPresent(m_pRenderer); // Draw the screen
 }
 
 void Game::update() {
+	m_pGameStateMachine->update();
 	// loop trough our objects and update them
-	for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++) {
-		m_gameObjects[i]->update();
-	}
+	//for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++) {
+		//m_gameObjects[i]->update();
+	//}
 }
 
 void Game::handleEvents() {
 	TheInputHandler::Instance()->update();
+
+	if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RETURN)) {
+		m_pGameStateMachine->changeState(new PlayState());
+	}
 }
 
 void Game::clean() {
@@ -82,6 +89,9 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int heigth, bo
 				SDL_SetRenderDrawColor(m_pRenderer, 255, 0, 0, 255);
 			}
 		}
+
+		m_pGameStateMachine = new GameStateMachine();
+		m_pGameStateMachine->changeState(new MenuState());
 
 		// init bmp
 		TextureManager::Instance()->load("imgs/cat.png", "animate", m_pRenderer);

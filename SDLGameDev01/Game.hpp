@@ -7,7 +7,12 @@
 #include "TextureManager.hpp"
 #include "Player.hpp"
 #include "Enemy.hpp"
+#include "AnimatedGraphic.hpp"
 #include "InputHandler.hpp"
+#include "GameStateMachine.hpp"
+#include "MenuState.hpp"
+#include "PlayState.hpp"
+#include "GameOverState.hpp"
 
 class Game
 {
@@ -37,6 +42,7 @@ public:
 	bool running() { return m_bRunning; }
 
 	SDL_Renderer* getRenderer() const { return m_pRenderer; }
+	GameStateMachine* getStateMache() { return m_pGameStateMachine; }
 private:
 	SDL_Window* m_pWindow;
 	SDL_Renderer* m_pRenderer;
@@ -46,6 +52,8 @@ private:
 	bool m_bRunning;
 
 	std::vector<GameObject*> m_gameObjects;
+
+	GameStateMachine* m_pGameStateMachine;
 };
 
 	typedef Game TheGame;

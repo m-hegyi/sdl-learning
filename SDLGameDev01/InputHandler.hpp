@@ -43,6 +43,7 @@ public:
 	int yvalue(int joy, int stick);
 
 	~InputHandler() {};
+	void reset();
 
 private:
 	InputHandler();
