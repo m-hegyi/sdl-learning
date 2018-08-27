@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<STATES>
+  <MENU>
+    <TEXTURES>
+      <texture filename="imgs/button.png" ID="playbutton" />
+      <texture filename="imgs/exit.png" ID="exitbutton" />
+    </TEXTURES>
+
+    <OBJECTS>
+      <object type="MenuButton" x="100" y="100" width="400" height="100" textureID="playbutton" numFrames="0" callbackID="1" />
+      <object type="MenuButton" x="100" y="300" width="400" height="100" textureID="exitbutton" numFrames="0" callbackID="2" />
+    </OBJECTS>
+  </MENU>
+  <PLAY>
+    <TEXTURES>
+      <texture filename="imgs/helicopter.png" ID="helicopter" />
+    </TEXTURES>
+
+    <OBJECTS>
+      <object type="Player" x="500" y="100" width="128" height="55" textureID="helicopter" numFrames="4" />
+      <object type="Enemy" x="100" y="100" width="128" height="55" textureID="helicopter" numFrames="4" />
+    </OBJECTS>
+  </PLAY>
+  <PAUSE>
+    <TEXTURES>
+      <texture filename="imgs/resume.png" ID="resumebutton" />
+      <texture filename="imgs/menu.png" ID="menubutton" />
+    </TEXTURES>
+
+    <OBJECTS>
+      <object type="MenuButton" x="100" y="100" width="200" height="75" textureID="menubutton" numFrames="0" callbackID="1" />
+      <object type="MenuButton" x="100" y="300" width="200" height="75" textureID="resumebutton" numFrames="0" callbackID="2" />
+    </OBJECTS>
+  </PAUSE>
+  <GAMEOVER>
+    
+  </GAMEOVER>
+</STATES>

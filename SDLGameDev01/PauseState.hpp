@@ -1,16 +1,17 @@
 #pragma once
 #include <vector>
 
-#include "GameState.hpp"
-#include "GameObject.hpp"
-#include "Game.hpp"
+#include "MenuState.hpp"
+#include "MainMenuState.hpp"
 
-class PauseState : public GameState
+class MenuState;
+
+class PauseState : public MenuState
 {
 public:
 
-	virtual void update();
 	virtual void render();
+	virtual void update();
 
 	virtual bool onEnter();
 	virtual bool onExit();
@@ -22,8 +23,9 @@ private:
 	static void s_pauseToMain();
 	static void s_resumePlay();
 
-	static const std::string s_pauseID;
+	virtual void setCallbacks(const std::vector<Callback>&callbacks);
 
+	static const std::string s_pauseID;
 	std::vector<GameObject*> m_gameObjects;
 };
 

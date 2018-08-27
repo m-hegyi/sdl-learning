@@ -1,9 +1,10 @@
 #include "GameOverState.hpp"
+#include "MainMenuState.hpp"
 
 const std::string GameOverState::s_gameOverID = "GAMEOVER";
 
 void GameOverState::s_gameOverToMain() {
-	TheGame::Instance()->getStateMache()->changeState(new MenuState());
+	TheGame::Instance()->getStateMache()->changeState(new MainMenuState());
 }
 
 void GameOverState::s_restartPlay() {
@@ -34,13 +35,13 @@ bool GameOverState::onEnter()
 		return false;
 	}
 
-	GameObject* gameOverText = new AnimatedGraphic(new LoadParams(200, 100, 200, 100, "gameovertext"), 2);
-	GameObject* button1 = new MenuButton(new LoadParams(200, 200, 200, 80, "menubutton"), s_gameOverToMain);
-	GameObject* button2 = new MenuButton(new LoadParams(200, 300, 200, 80, "restartbutton"), s_restartPlay);
+	//GameObject* gameOverText = new AnimatedGraphic(new LoadParams(200, 100, 200, 100, "gameovertext"), 2);
+	//GameObject* button1 = new MenuButton(new LoadParams(200, 200, 200, 80, "menubutton"), s_gameOverToMain);
+	//GameObject* button2 = new MenuButton(new LoadParams(200, 300, 200, 80, "restartbutton"), s_restartPlay);
 
-	m_gameObjects.push_back(gameOverText);
-	m_gameObjects.push_back(button1);
-	m_gameObjects.push_back(button2);
+	//m_gameObjects.push_back(gameOverText);
+	//m_gameObjects.push_back(button1);
+	//m_gameObjects.push_back(button2);
 
 	std::cout << "entering GameOverState" << std::endl;
 	return true;

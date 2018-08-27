@@ -2,9 +2,7 @@
 
 
 
-Enemy::Enemy(const LoadParams* pParams) : SDLGameObject(pParams) {
-	m_velocity.setY(2);
-	m_velocity.setX(0.001);
+Enemy::Enemy()  {
 }
 
 
@@ -31,4 +29,11 @@ void Enemy::update() {
 
 void Enemy::clear() {
 
+}
+
+void Enemy::load(const LoadParams * pParams) {
+	SDLGameObject::load(pParams);
+
+	m_velocity.setY(2);
+	m_velocity.setX(0.001);
 }

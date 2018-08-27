@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <vector>
 
 class GameState
 {
@@ -15,5 +16,7 @@ public:
 public:
 	GameState() {};
 	~GameState() {};
+protected:
+	std::vector<std::string> m_textureIDList;
 };
 

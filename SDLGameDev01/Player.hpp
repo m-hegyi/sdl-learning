@@ -2,11 +2,12 @@
 
 #include "SDLGameObject.hpp"
 #include "InputHandler.hpp"
+#include "GameObjectFactory.hpp"
 
 class Player : public SDLGameObject 
 {
 public:
-	Player(const LoadParams* pParams);
+	Player();
 	~Player();
 
 public: 
@@ -19,7 +20,15 @@ public:
 	virtual void update();
 	virtual void clean();
 
+	virtual void load(const LoadParams* pParams) override;
+
 private:
 	void handleInput();
 };
 
+class PlayerCreator : public BaseCreator
+{
+	virtual GameObject* createGameObject() const override {
+		return new Player();
+	}
+};

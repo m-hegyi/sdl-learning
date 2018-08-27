@@ -1,6 +1,6 @@
 #include "Player.hpp"
 
-Player::Player(const LoadParams* pParams) : SDLGameObject(pParams) {
+Player::Player()  {
 }
 
 
@@ -26,6 +26,10 @@ void Player::update() {
 
 void Player::clean() {
 
+}
+
+void Player::load(const LoadParams * pParams) {
+	SDLGameObject::load(pParams);
 }
 
 void Player::handleInput() {

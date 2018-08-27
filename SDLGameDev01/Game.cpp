@@ -1,5 +1,7 @@
 #include "Game.hpp"
 #include <iostream>
+#include "MainMenuState.hpp"
+#include "MenuButton.hpp"
 
 
 Game::Game()
@@ -90,15 +92,17 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int heigth, bo
 			}
 		}
 
+		TheGameObjectFactory::Instance()->registerType("MenuButton", new MenuButtonCreator());
+		TheGameObjectFactory::Instance()->registerType("Player", new PlayerCreator());
+		TheGameObjectFactory::Instance()->registerType("Enemy", new EnemyCreator());
+
 		m_pGameStateMachine = new GameStateMachine();
-		m_pGameStateMachine->changeState(new MenuState());
+		m_pGameStateMachine->changeState(new MainMenuState());
 
 		// init bmp
 		TextureManager::Instance()->load("imgs/cat.png", "animate", m_pRenderer);
 		TheInputHandler::Instance()->initializeJoysticks();
-
-		m_gameObjects.push_back(new Player(new LoadParams(100, 100, 128, 82, "animate")));
-		m_gameObjects.push_back(new Enemy(new LoadParams(300, 300, 128, 82, "animate")));
+		
 	}
 
 	std::cout << "Init success!" << std::endl;

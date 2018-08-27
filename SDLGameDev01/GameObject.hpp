@@ -14,8 +14,11 @@ public:
 	virtual void update() = 0;
 	virtual void clean() = 0;
 
+	// new load function
+	virtual void load(const LoadParams* pParams) = 0;
+
 protected:
-	GameObject(const LoadParams* pParams) {}
+	GameObject() {}
 	~GameObject() {};
 };
 

@@ -1,6 +1,6 @@
 #include "AnimatedGraphic.hpp"
 
-AnimatedGraphic::AnimatedGraphic(const LoadParams * pParams, int animSpeed) : SDLGameObject(pParams), m_animSpeed(animSpeed) {
+AnimatedGraphic::AnimatedGraphic() {
 
 }
 
@@ -13,4 +13,8 @@ void AnimatedGraphic::update() {
 }
 
 void AnimatedGraphic::clean() {
+}
+
+void AnimatedGraphic::load(const LoadParams * pParams) {
+	SDLGameObject::load(pParams);
 }
