@@ -2,9 +2,6 @@
 #include <vector>
 
 #include "MenuState.hpp"
-#include "MainMenuState.hpp"
-
-class MenuState;
 
 class PauseState : public MenuState
 {

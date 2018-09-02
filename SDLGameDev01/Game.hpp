@@ -4,15 +4,10 @@
 #include <SDL_image.h>
 #include <vector>
 
-#include "MenuState.hpp"
 #include "TextureManager.hpp"
-#include "Player.hpp"
-#include "Enemy.hpp"
-#include "AnimatedGraphic.hpp"
 #include "InputHandler.hpp"
+#include "AnimatedGraphic.hpp"
 #include "GameStateMachine.hpp"
-#include "PlayState.hpp"
-#include "GameOverState.hpp"
 
 class Game
 {

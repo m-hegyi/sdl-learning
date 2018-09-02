@@ -1,10 +1,7 @@
 #pragma once
 #include <vector>
 
-#include "PauseState.hpp"
 #include "MenuState.hpp"
-#include "MenuButton.hpp"
-
 
 class MainMenuState : public MenuState
 {

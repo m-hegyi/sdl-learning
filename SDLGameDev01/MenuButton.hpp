@@ -1,6 +1,7 @@
 #pragma once
 #include "SDLGameObject.hpp"
 #include "InputHandler.hpp"
+#include "GameObjectFactory.hpp"
 
 class MenuButton : public SDLGameObject
 {

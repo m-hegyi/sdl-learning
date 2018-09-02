@@ -1,6 +1,7 @@
 #pragma once
 
 #include "SDLGameObject.hpp"
+#include "GameObjectFactory.hpp"
 
 class AnimatedGraphic : public SDLGameObject
 {
@@ -17,3 +18,9 @@ private:
 	int m_animSpeed;
 };
 
+class AnimatedGraphicCreator : public BaseCreator
+{
+	virtual GameObject* createGameObject() const {
+		return new AnimatedGraphic();
+	}
+};

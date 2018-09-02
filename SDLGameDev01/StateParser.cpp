@@ -1,5 +1,6 @@
 #include "StateParser.hpp"
 #include "Game.hpp"
+#include "GameObjectFactory.hpp"
 
 bool StateParser::parseState(const char * stateFile, std::string stateID, std::vector<GameObject*>* pObjects, std::vector<std::string> *pTextureIDs) {
 	// create XML document

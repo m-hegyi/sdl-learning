@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include <vector>
 
+#include "Vector2D.hpp"
 #include "Game.hpp"
 
 enum mouse_buttons {
@@ -26,7 +27,7 @@ public:
 
 	// mouse
 	bool getMouseButtonState(int buttonNumber);
-	Vector2D* getMousePosition() { return m_mousePosition; }
+	Vector2D* getMousePosition() { return m_mousePosition; };
 
 	// keyboard
 	bool isKeyDown(SDL_Scancode key);

@@ -1,10 +1,8 @@
 #pragma once
 #include <vector>
 
+#include "SDLGameObject.hpp"
 #include "GameState.hpp"
-#include "GameObject.hpp"
-#include "Game.hpp"
-#include "PauseState.hpp"
 
 class PlayState : public GameState
 {

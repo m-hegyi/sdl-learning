@@ -1,6 +1,8 @@
 #include <iostream>
 #include "MainMenuState.hpp"
 #include "StateParser.hpp"
+#include "MenuButton.hpp"
+#include "PlayState.hpp"
 
 const std::string MainMenuState::s_menuID = "MENU";
 

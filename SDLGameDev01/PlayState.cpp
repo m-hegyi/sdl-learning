@@ -1,6 +1,8 @@
 #include <iostream>
 #include "PlayState.hpp"
 #include "StateParser.hpp"
+#include "PauseState.hpp"
+#include "GameOverState.hpp"
 
 const std::string PlayState::s_playID = "PLAY";
 

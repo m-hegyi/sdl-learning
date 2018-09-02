@@ -2,7 +2,10 @@
 #include <iostream>
 #include "MainMenuState.hpp"
 #include "MenuButton.hpp"
-
+#include "PlayState.hpp"
+#include "Player.hpp"
+#include "Enemy.hpp"
+#include "AnimatedGraphic.hpp"
 
 Game::Game()
 {
@@ -33,10 +36,6 @@ void Game::render() {
 
 void Game::update() {
 	m_pGameStateMachine->update();
-	// loop trough our objects and update them
-	//for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++) {
-		//m_gameObjects[i]->update();
-	//}
 }
 
 void Game::handleEvents() {
@@ -95,6 +94,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int heigth, bo
 		TheGameObjectFactory::Instance()->registerType("MenuButton", new MenuButtonCreator());
 		TheGameObjectFactory::Instance()->registerType("Player", new PlayerCreator());
 		TheGameObjectFactory::Instance()->registerType("Enemy", new EnemyCreator());
+		TheGameObjectFactory::Instance()->registerType("AnimetidGraphic", new AnimatedGraphicCreator());
 
 		m_pGameStateMachine = new GameStateMachine();
 		m_pGameStateMachine->changeState(new MainMenuState());

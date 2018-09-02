@@ -33,6 +33,16 @@
     </OBJECTS>
   </PAUSE>
   <GAMEOVER>
-    
+    <TEXTURES>
+      <texture filename="imgs/gameover.png" ID="gameovertext" />
+      <texture filename="imgs/restart.png" ID="restart" />
+      <texture filename="imgs/menu.png" ID="mainbutton" />
+    </TEXTURES>
+
+    <OBJECTS>
+      <ovject type="AnimatedGraphic" x="200" y="100" width="190" heigth="30" textureID="gameovertext" numFrames="2" animSpeed="2" />
+      <object type="MenuButton" x="100" y="100" width="200" height="75" textureID="restart" numFrames="0" callbackID="1" />
+      <object type="MenuButton" x="200" y="100" width="200" height="75" textureID="mainbutton" numFrames="0" callbackID="2" />
+    </OBJECTS>
   </GAMEOVER>
 </STATES>

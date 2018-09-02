@@ -4,7 +4,6 @@
 #include <string>
 #include <SDL.h>
 
-#include "TextureManager.hpp"
 #include "LoadParams.hpp"
 
 class GameObject

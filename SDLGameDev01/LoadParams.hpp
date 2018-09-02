@@ -22,6 +22,8 @@ public:
 
 	int getCallbackID() const { return m_callbackID; }
 
+	int getAnimSpeed() const { return m_animSpeed; }
+
 	std::string getTextureID() const { return m_textureID; }
 private:
 	int m_x;
